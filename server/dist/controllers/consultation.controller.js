@@ -21,17 +21,6 @@ export const submitConsultation = async (req, res) => {
             return;
         }
         const record = await consultationService.processConsultation(parseResult.data);
-        if (record.storage.status === 'SYNC_ERROR') {
-            res.status(502).json({
-                success: false,
-                submissionId: record.submissionId,
-                submittedAt: record.submittedAt,
-                storageStatus: record.storage.status,
-                error: record.storage.statusDetail,
-                preparedSheetRow: record.storage.preparedRow,
-            });
-            return;
-        }
         res.status(200).json({
             success: true,
             submissionId: record.submissionId,

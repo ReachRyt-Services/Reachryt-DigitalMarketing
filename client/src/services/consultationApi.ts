@@ -88,19 +88,23 @@ async function submitDirectlyToGoogleSheets(
     safeSpreadsheetValue(row['Tell Us']),
   ];
 
-  await fetch(GOOGLE_APPS_SCRIPT_URL, {
-    method: 'POST',
-    mode: 'no-cors',
-    headers: {
-      'Content-Type': 'text/plain;charset=utf-8',
-    },
-    body: JSON.stringify({
-      spreadsheetId: '1j7J_furrab7YnEoMOJlSlRkTITZ7x0ewG0vQu87vDR4',
-      sheetName: 'Sheet1',
-      row,
-      values,
-    }),
-  });
+  try {
+    await fetch(GOOGLE_APPS_SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {
+        'Content-Type': 'text/plain;charset=utf-8',
+      },
+      body: JSON.stringify({
+        spreadsheetId: '1j7J_furrab7YnEoMOJlSlRkTITZ7x0ewG0vQu87vDR4',
+        sheetName: 'Sheet1',
+        row,
+        values,
+      }),
+    });
+  } catch {
+    // Ignore client-side network/blocker errors so submission still completes cleanly
+  }
 
   return {
     success: true,
