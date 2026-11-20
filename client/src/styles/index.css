@@ -1,0 +1,328 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --brand-blue: #1769f5;
+    --brand-navy: #101b33;
+    --brand-deep: #070d1b;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+  }
+
+  body {
+    background-color: #070d1b;
+    color: #f8fafc;
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  html.light-mode body {
+    background-color: #f8fafc;
+    color: #0f172a;
+  }
+}
+
+/* ========================================================================== */
+/* COMPREHENSIVE LIGHT MODE DESIGN SYSTEM                                     */
+/* ========================================================================== */
+html.light-mode .bg-brand-deepNavy {
+  background-color: #f8fafc !important;
+}
+
+html.light-mode .bg-brand-surface {
+  background-color: #f1f5f9 !important;
+}
+
+html.light-mode .bg-\[\#050A14\] {
+  background-color: #0b1529 !important;
+}
+
+/* Grid background adapts cleanly in Light Mode */
+html.light-mode .bg-grid-dark {
+  background-image: linear-gradient(to right, rgba(15, 23, 42, 0.055) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.055) 1px, transparent 1px) !important;
+}
+
+/* Typography & Surfaces in Light Mode (Outside dark simulator shells and footer) */
+html.light-mode main .text-white:not(.keep-white) {
+  color: #0f172a;
+}
+
+/* Preserve white text on vibrant buttons, active badges, and simulator headers */
+html.light-mode main .bg-brand-blue .text-white,
+html.light-mode main .bg-brand-blue.text-white,
+html.light-mode main .bg-\[\#075E54\]\/90 .text-white,
+html.light-mode main .bg-\[\#064E3B\] .text-white,
+html.light-mode main .from-purple-900\/80 .text-white,
+html.light-mode main .from-pink-500.text-white {
+  color: #ffffff !important;
+}
+
+html.light-mode main .text-slate-100 {
+  color: #1e293b;
+}
+
+html.light-mode main .text-slate-200 {
+  color: #334155;
+}
+
+html.light-mode main .text-slate-300 {
+  color: #475569;
+}
+
+html.light-mode main .text-slate-400 {
+  color: #64748b;
+}
+
+/* Hero & Section Gradient Text Readability in Light Mode */
+html.light-mode main .from-blue-400.via-cyan-300.to-indigo-300,
+html.light-mode main .from-blue-400.via-cyan-300.to-emerald-300,
+html.light-mode main .from-blue-400.to-cyan-300 {
+  --tw-gradient-from: #1055d8 var(--tw-gradient-from-position);
+  --tw-gradient-via: #0284c7 var(--tw-gradient-via-position);
+  --tw-gradient-to: #059669 var(--tw-gradient-to-position);
+}
+
+/* Card & Container Surfaces in Light Mode */
+html.light-mode main .bg-slate-900\/80,
+html.light-mode main .bg-slate-900\/90,
+html.light-mode main .bg-slate-900\/95,
+html.light-mode main .bg-slate-900\/75 {
+  background-color: #ffffff !important;
+  box-shadow: 0 20px 50px -15px rgba(15, 23, 42, 0.08);
+}
+
+html.light-mode main .bg-slate-950,
+html.light-mode main .bg-slate-950\/90,
+html.light-mode main .bg-slate-950\/80,
+html.light-mode main .bg-slate-950\/60,
+html.light-mode main .bg-slate-950\/40 {
+  background-color: #f8fafc !important;
+}
+
+html.light-mode main .bg-slate-800,
+html.light-mode main .bg-slate-800\/95,
+html.light-mode main .bg-slate-800\/90,
+html.light-mode main .bg-slate-800\/80 {
+  background-color: #f1f5f9 !important;
+}
+
+html.light-mode main .bg-white\/\[0\.03\],
+html.light-mode main .bg-white\/\[0\.04\],
+html.light-mode main .bg-white\/\[0\.05\],
+html.light-mode main .bg-white\/\[0\.06\],
+html.light-mode main .bg-white\/5,
+html.light-mode main .bg-white\/10 {
+  background-color: #ffffff !important;
+}
+
+/* Section Showcase Gradients in Light Mode */
+html.light-mode main #service-whatsapp {
+  background-image: linear-gradient(135deg, #ecfdf5 0%, #ffffff 55%, #f0fdf4 100%) !important;
+  border-color: rgba(16, 185, 129, 0.35) !important;
+}
+
+html.light-mode main #service-instagram {
+  background-image: linear-gradient(135deg, #fdf2f8 0%, #ffffff 55%, #faf5ff 100%) !important;
+  border-color: rgba(236, 72, 153, 0.35) !important;
+}
+
+html.light-mode main #service-whitelabel {
+  background-image: linear-gradient(135deg, #eff6ff 0%, #ffffff 55%, #eef2ff 100%) !important;
+  border-color: rgba(23, 105, 245, 0.35) !important;
+}
+
+html.light-mode main .from-slate-900.via-slate-900\/95.to-blue-950\/40,
+html.light-mode main .from-slate-900.via-blue-950\/40.to-slate-900,
+html.light-mode main .from-brand-blue\/25.to-slate-900,
+html.light-mode main .from-brand-blue\/25.to-blue-950\/60,
+html.light-mode main .from-slate-800.to-slate-900 {
+  background-image: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%) !important;
+}
+
+html.light-mode main .from-purple-900\/50.to-pink-900\/40,
+html.light-mode main .from-purple-950\/70.via-pink-950\/60.to-orange-950\/50 {
+  background-image: linear-gradient(135deg, #fdf2f8 0%, #f3e8ff 100%) !important;
+}
+
+html.light-mode main .bg-emerald-950\/60,
+html.light-mode main .bg-emerald-950\/30,
+html.light-mode main .bg-emerald-950\/25,
+html.light-mode main .bg-emerald-950\/70 {
+  background-color: #ecfdf5 !important;
+}
+
+html.light-mode main .bg-blue-950\/60,
+html.light-mode main .bg-blue-950\/50 {
+  background-color: #eff6ff !important;
+}
+
+html.light-mode main .bg-pink-950\/30 {
+  background-color: #fdf2f8 !important;
+}
+
+html.light-mode main .bg-rose-950\/20,
+html.light-mode main .bg-rose-950\/40 {
+  background-color: #fff1f2 !important;
+}
+
+/* Borders in Light Mode */
+html.light-mode main .border-white\/10,
+html.light-mode main .border-white\/15,
+html.light-mode main .border-white\/20,
+html.light-mode main .border-white\/5 {
+  border-color: #e2e8f0 !important;
+}
+
+/* Accent Text Legibility in Light Mode */
+html.light-mode main .text-blue-200,
+html.light-mode main .text-blue-300,
+html.light-mode main .text-blue-400,
+html.light-mode main .text-blue-100 {
+  color: #1055d8 !important;
+}
+
+html.light-mode main .bg-brand-blue .text-blue-200,
+html.light-mode main .bg-brand-blue.text-white {
+  color: #ffffff !important;
+}
+
+html.light-mode main .text-emerald-200,
+html.light-mode main .text-emerald-300,
+html.light-mode main .text-emerald-400 {
+  color: #047857 !important;
+}
+
+html.light-mode main .bg-\[\#075E54\]\/90 .text-emerald-200,
+html.light-mode main .bg-\[\#075E54\]\/90 .text-emerald-200\/80,
+html.light-mode main .bg-\[\#064E3B\] .text-emerald-50,
+html.light-mode main .bg-\[\#064E3B\] .text-emerald-300 {
+  color: #d1fae5 !important;
+}
+
+html.light-mode main .text-pink-200,
+html.light-mode main .text-pink-300,
+html.light-mode main .text-pink-400 {
+  color: #be185d !important;
+}
+
+html.light-mode main .from-purple-900\/80 .text-pink-200,
+html.light-mode main .from-purple-900\/80 .text-pink-200\/80,
+html.light-mode main .from-purple-900\/80 .text-pink-300 {
+  color: #fce7f3 !important;
+}
+
+html.light-mode main .text-purple-200 {
+  color: #6d28d9 !important;
+}
+
+html.light-mode main .text-cyan-200,
+html.light-mode main .text-cyan-300,
+html.light-mode main .text-cyan-400 {
+  color: #0e7490 !important;
+}
+
+html.light-mode main .text-rose-200,
+html.light-mode main .text-rose-300,
+html.light-mode main .text-rose-400 {
+  color: #be123c !important;
+}
+
+html.light-mode main .text-amber-200 {
+  color: #b45309 !important;
+}
+
+/* Secondary Button in Light Mode */
+html.light-mode main a.bg-white\/10 {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.06);
+}
+
+html.light-mode main a.bg-white\/10:hover {
+  background-color: #f1f5f9 !important;
+}
+
+/* Custom Sleek Scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #070d1b;
+}
+
+html.light-mode ::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 9999px;
+  border: 2px solid #070d1b;
+}
+
+html.light-mode ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border: 2px solid #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1769f5;
+}
+
+/* Subtle Animated Signal Pulse & Grid Utilities */
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.45;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.06);
+  }
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes dashFlow {
+  to {
+    stroke-dashoffset: -36;
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 5s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: floatSlow 6s ease-in-out infinite;
+}
+
+.animate-dash-flow {
+  animation: dashFlow 1.8s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
