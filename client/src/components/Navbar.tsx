@@ -111,21 +111,9 @@ export const Navbar: React.FC = () => {
           })}
         </nav>
 
-        {/* Right: Equal-Distance Action Group -> [3 Core Engines] + [Dark/Light Switch] + [Book Consultation] */}
+        {/* Right: Equal-Distance Action Group -> [Dark/Light Switch] + [Book Consultation] */}
         <div className="hidden md:flex items-center gap-3.5 shrink-0">
-          <a
-            href="#services"
-            className={`hidden xl:inline-flex items-center gap-2 text-xs font-semibold px-3.5 py-2 rounded-full border transition-colors ${
-              isLight
-                ? 'bg-slate-100 border-slate-200/90 text-slate-700 hover:text-brand-blue hover:border-brand-blue/40'
-                : 'bg-white/[0.04] border-white/10 text-slate-200 hover:text-white'
-            }`}
-          >
-            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-            <span>3 Core Engines</span>
-          </a>
-
-          {/* Dark / Light Mode Switch (Positioned directly left of Book Consultation with equal spacing) */}
+          {/* Dark / Light Mode Switch */}
           <button
             type="button"
             onClick={toggleTheme}

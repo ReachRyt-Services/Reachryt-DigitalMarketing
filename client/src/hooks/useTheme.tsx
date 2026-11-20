@@ -9,20 +9,22 @@ interface ThemeContextValue {
 }
 
 const ThemeContext = createContext<ThemeContextValue>({
-  theme: 'dark',
+  theme: 'light',
   toggleTheme: () => {},
   setTheme: () => {},
 });
 
+const THEME_STORAGE_KEY = 'reachryt-theme-default-light';
+
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [theme, setThemeState] = useState<ThemeMode>(() => {
     if (typeof window !== 'undefined') {
-      const saved = window.localStorage.getItem('reachryt-theme');
+      const saved = window.localStorage.getItem(THEME_STORAGE_KEY);
       if (saved === 'light' || saved === 'dark') {
         return saved;
       }
     }
-    return 'dark';
+    return 'light';
   });
 
   useEffect(() => {
@@ -34,7 +36,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
       root.classList.add('dark');
       root.classList.remove('light-mode');
     }
-    window.localStorage.setItem('reachryt-theme', theme);
+    window.localStorage.setItem(THEME_STORAGE_KEY, theme);
   }, [theme]);
 
   const toggleTheme = () => {

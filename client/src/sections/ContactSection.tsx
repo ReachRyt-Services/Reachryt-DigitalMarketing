@@ -121,16 +121,16 @@ export const ContactSection: React.FC = () => {
                 variants={fadeUpVariant}
                 className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-blue/15 border border-brand-blue/30 text-blue-300 text-xs font-display font-semibold uppercase tracking-widest"
               >
-                <span>07 • Schedule a Consultation</span>
+                <span>Contact Us</span>
               </motion.div>
 
               <motion.h2
                 variants={fadeUpVariant}
                 className="font-display font-extrabold text-3xl sm:text-5xl text-white tracking-tight leading-[1.12]"
               >
-                Ready to Make Your Institution&apos;s Communication{' '}
+                Let&apos;s{' '}
                 <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-emerald-300 bg-clip-text text-transparent">
-                  Smarter?
+                  Talk.
                 </span>
               </motion.h2>
 
@@ -138,9 +138,7 @@ export const ContactSection: React.FC = () => {
                 variants={fadeUpVariant}
                 className="text-slate-300 text-sm sm:text-base leading-relaxed"
               >
-                Whether you want to deploy automated WhatsApp admission flows, launch Instagram
-                Comment-to-DM campaigns, or partner with Reachryt as your white-label execution
-                engine—let&apos;s start the conversation.
+                Have a question or want to get started? Reach out to us anytime.
               </motion.p>
             </div>
 
@@ -229,10 +227,10 @@ export const ContactSection: React.FC = () => {
             <div className="rounded-3xl bg-slate-900/95 border border-white/15 p-6 sm:p-10 shadow-2xl">
               <div className="pb-6 mb-6 border-b border-white/10">
                 <h3 className="font-display font-bold text-xl sm:text-2xl text-white">
-                  Request a Strategy &amp; Automation Consultation
+                  Book a Consultation
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-400 mt-1">
-                  Share your institution or agency requirements and our team will get in touch with you.
+                  Share your requirements and our team will reach out shortly.
                 </p>
               </div>
 
@@ -381,12 +379,12 @@ export const ContactSection: React.FC = () => {
                       onChange={handleChange}
                       className="w-full rounded-xl bg-slate-950/90 border border-white/15 px-4 py-3 text-sm text-white focus:outline-none focus:ring-2 focus:ring-brand-blue"
                     >
-                      <option value="whatsapp-automation">01. WhatsApp Automation</option>
-                      <option value="instagram-dm-workflows">02. Instagram DM Workflows</option>
-                      <option value="white-label-services">03. White-Label Services (Your Brand, Our Engine)</option>
-                      <option value="admission-campaign-marketing">Admission Campaign Marketing &amp; PPC</option>
-                      <option value="education-seo-digital-growth">Education SEO &amp; Organic Growth</option>
-                      <option value="full-stack-education-automation">Full-Stack Automation + Digital Marketing</option>
+                      <option value="whatsapp-automation">WhatsApp Automation</option>
+                      <option value="instagram-dm-workflows">Instagram DM</option>
+                      <option value="white-label-services">White-Label Partnership</option>
+                      <option value="admission-campaign-marketing">Paid Advertising</option>
+                      <option value="education-seo-digital-growth">SEO &amp; Social Media</option>
+                      <option value="full-stack-education-automation">Complete Digital Marketing</option>
                     </select>
                   </div>
                 </div>
@@ -397,7 +395,7 @@ export const ContactSection: React.FC = () => {
                     htmlFor="message"
                     className="block text-xs font-medium text-slate-200 mb-1.5"
                   >
-                    Tell Us <span className="text-blue-400">*</span>
+                    Message <span className="text-blue-400">*</span>
                   </label>
                   <textarea
                     id="message"
@@ -406,7 +404,7 @@ export const ContactSection: React.FC = () => {
                     required
                     value={formData.message}
                     onChange={handleChange}
-                    placeholder="Share your communication goals, admission enquiry workflow needs, or white-label partnership questions..."
+                    placeholder="How can we help you?"
                     className={`w-full rounded-xl bg-slate-950/90 border px-4 py-3 text-sm text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-brand-blue transition-all ${
                       errors.message ? 'border-rose-500' : 'border-white/15'
                     }`}
@@ -419,14 +417,14 @@ export const ContactSection: React.FC = () => {
                 {/* Submit Button */}
                 <div className="pt-1 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                   <p className="text-xs text-slate-400">
-                    We use your details strictly to respond to your consultation request.
+                    We&apos;ll get back to you within 24 hours.
                   </p>
                   <button
                     type="submit"
                     disabled={isSubmitting}
                     className="inline-flex items-center justify-center gap-2 bg-brand-blue hover:bg-brand-darkBlue disabled:opacity-60 text-white font-display font-semibold text-sm px-7 py-3.5 rounded-full shadow-glow transition-all"
                   >
-                    <span>{isSubmitting ? 'Validating & Syncing...' : 'Submit Consultation Request'}</span>
+                    <span>{isSubmitting ? 'Sending...' : 'Send Message'}</span>
                     <Send className="w-4 h-4" />
                   </button>
                 </div>

@@ -53,6 +53,44 @@ html.light-mode main .text-white:not(.keep-white) {
   color: #0f172a;
 }
 
+/* Authentic WhatsApp & Instagram DM Simulators remain native in all themes */
+.wa-chat-wallpaper {
+  background-color: #0b141a !important;
+  background-image:
+    radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 0),
+    radial-gradient(rgba(37, 211, 102, 0.045) 1px, transparent 0),
+    url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='0.045' stroke-width='1.2'%3E%3Cpath d='M14 18c4-2 8 2 6 6s-8 2-6-6z'/%3E%3Ccircle cx='58' cy='20' r='5'/%3E%3Cpath d='M22 56l8-4 4 8-8 4z'/%3E%3Cpath d='M54 52c3-3 9-1 9 4s-6 7-9 4z'/%3E%3Ccircle cx='40' cy='38' r='3'/%3E%3Cpath d='M10 38h8m-4-4v8'/%3E%3Cpath d='M66 36l5 5m0-5l-5 5'/%3E%3C/g%3E%3C/svg%3E") !important;
+  background-size: 24px 24px, 36px 36px, 80px 80px !important;
+  background-position: 0 0, 12px 12px, 0 0 !important;
+}
+
+.ig-dm-wallpaper {
+  background-color: #000000 !important;
+  background-image: radial-gradient(circle at 85% 15%, rgba(131, 58, 180, 0.14), transparent 45%),
+    radial-gradient(circle at 15% 85%, rgba(225, 48, 108, 0.12), transparent 45%) !important;
+}
+
+html.light-mode main .native-chat-sim,
+html.light-mode main .native-chat-sim .text-white {
+  color: #ffffff !important;
+}
+
+html.light-mode main .native-chat-sim .text-slate-100,
+html.light-mode main .native-chat-sim .text-slate-200 {
+  color: #e9edef !important;
+}
+
+html.light-mode main .native-chat-sim .text-slate-300,
+html.light-mode main .native-chat-sim .text-slate-400 {
+  color: #8696a0 !important;
+}
+
+html.light-mode main .native-chat-sim .border-white\/10,
+html.light-mode main .native-chat-sim .border-white\/15,
+html.light-mode main .native-chat-sim .border-white\/5 {
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
 /* Preserve white text on vibrant buttons, active badges, and simulator headers */
 html.light-mode main .bg-brand-blue .text-white,
 html.light-mode main .bg-brand-blue.text-white,

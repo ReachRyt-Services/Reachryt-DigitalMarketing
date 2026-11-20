@@ -6,11 +6,15 @@ import {
   Sparkles,
   Layers,
   CheckCheck,
-  Send,
-  Zap,
   ShieldCheck,
-  GitBranch,
+  Users,
   GraduationCap,
+  Phone,
+  Video,
+  Smile,
+  Mic,
+  Camera,
+  Image as ImageIcon,
 } from 'lucide-react';
 import { MagneticButton } from '../components/MagneticButton';
 import { fadeUpVariant, staggerContainerVariant } from '../animations/variants';
@@ -27,7 +31,7 @@ export const HeroSection: React.FC = () => {
       setActiveTab((prev) =>
         prev === 'whatsapp' ? 'instagram' : prev === 'instagram' ? 'whitelabel' : 'whatsapp'
       );
-    }, 5200);
+    }, 5000);
     return () => clearInterval(timer);
   }, [autoCycle]);
 
@@ -39,38 +43,37 @@ export const HeroSection: React.FC = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen pt-28 pb-16 lg:pt-32 lg:pb-24 flex flex-col justify-between overflow-hidden bg-brand-deepNavy"
+      className="relative min-h-screen pt-28 pb-16 lg:pt-32 lg:pb-24 flex items-center overflow-hidden bg-brand-deepNavy"
     >
-      {/* Layered Ambient Background & Technical Grid */}
-      <div className="absolute inset-0 bg-grid-dark bg-[size:44px_44px] opacity-60 pointer-events-none" />
-      <div className="absolute -top-36 -left-36 w-[520px] h-[520px] rounded-full bg-brand-blue/20 blur-[130px] pointer-events-none animate-pulse-glow" />
-      <div className="absolute top-1/4 -right-32 w-[460px] h-[460px] rounded-full bg-cyan-500/15 blur-[130px] pointer-events-none" />
-      <div className="absolute bottom-0 left-1/3 w-[540px] h-[340px] rounded-full bg-indigo-600/15 blur-[140px] pointer-events-none" />
+      {/* Subtle Ambient Background */}
+      <div className="absolute inset-0 bg-grid-dark bg-[size:44px_44px] opacity-50 pointer-events-none" />
+      <div className="absolute -top-36 -left-36 w-[500px] h-[500px] rounded-full bg-brand-blue/15 blur-[130px] pointer-events-none" />
+      <div className="absolute top-1/4 -right-32 w-[420px] h-[420px] rounded-full bg-cyan-500/10 blur-[130px] pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-          {/* Left Column: High-Impact Headline, Value Proposition, and CTAs */}
+          {/* Left Column: Simple, Friendly Headline & CTAs */}
           <motion.div
             variants={staggerContainerVariant}
             initial="hidden"
             animate="visible"
             className="lg:col-span-7 space-y-6"
           >
-            {/* Education & Automation Eyebrow Pill */}
-            <motion.div variants={fadeUpVariant} className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/[0.06] border border-white/15 backdrop-blur-md">
-              <span className="flex h-2 w-2 relative">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-blue opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-blue" />
-              </span>
-              <span className="text-xs font-display font-semibold uppercase tracking-wider text-blue-200 font-medium">
-                Digital Marketing &amp; Automation Engine for Education
+            {/* Friendly Pill */}
+            <motion.div
+              variants={fadeUpVariant}
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/[0.06] border border-white/15"
+            >
+              <span className="h-2 w-2 rounded-full bg-brand-blue" />
+              <span className="text-xs font-display font-semibold uppercase tracking-wider text-blue-300">
+                We Build Brands That Buzz
               </span>
             </motion.div>
 
-            {/* Expressive Display Headline */}
+            {/* Simple, Bold Headline */}
             <motion.h1
               variants={fadeUpVariant}
-              className="font-display font-extrabold text-4xl sm:text-5xl xl:text-[3.85rem] leading-[1.06] tracking-tight text-white"
+              className="font-display font-extrabold text-4xl sm:text-5xl xl:text-[3.75rem] leading-[1.08] tracking-tight text-white"
             >
               Turn Every Conversation Into an{' '}
               <span className="bg-gradient-to-r from-blue-400 via-cyan-300 to-indigo-300 bg-clip-text text-transparent">
@@ -78,25 +81,24 @@ export const HeroSection: React.FC = () => {
               </span>
             </motion.h1>
 
-            {/* Supporting Description */}
+            {/* Easy-to-Read Subtitle */}
             <motion.p
               variants={fadeUpVariant}
-              className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl"
+              className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-xl"
             >
-              Smart <strong className="text-white font-semibold">WhatsApp automation</strong>,{' '}
-              <strong className="text-white font-semibold">Instagram DM workflows</strong>, and{' '}
-              <strong className="text-white font-semibold">white-label digital solutions</strong>{' '}
-              engineered to help schools, colleges, universities, and training institutions grow,
-              engage, and convert admission enquiries seamlessly.
+              We help schools, colleges, and growing brands reply instantly on{' '}
+              <strong className="text-white font-semibold">WhatsApp</strong> and{' '}
+              <strong className="text-white font-semibold">Instagram</strong>, so you never miss an
+              enquiry.
             </motion.p>
 
             {/* CTA Buttons */}
             <motion.div
               variants={fadeUpVariant}
-              className="flex flex-wrap items-center gap-4 pt-2"
+              className="flex flex-wrap items-center gap-4 pt-1"
             >
               <MagneticButton href="#services" variant="primary">
-                <span>Explore Our Services</span>
+                <span>Our Services</span>
                 <ArrowRight className="w-4 h-4" />
               </MagneticButton>
 
@@ -105,113 +107,70 @@ export const HeroSection: React.FC = () => {
               </MagneticButton>
             </motion.div>
 
-            {/* First-Screen Core Service Dominance Pills (Immediate Clarity) */}
-            <motion.div variants={fadeUpVariant} className="pt-4">
-              <div className="text-[11px] font-display font-semibold uppercase tracking-widest text-slate-400 mb-3 flex items-center gap-2">
-                <span>Core Capabilities — Click to preview or scroll to deep-dive</span>
-              </div>
+            {/* 3 Simple Service Tabs */}
+            <motion.div variants={fadeUpVariant} className="pt-2">
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                {/* Pill 01: WhatsApp Automation */}
                 <button
                   type="button"
                   onClick={() => handleSelectTab('whatsapp')}
-                  className={`group text-left p-3.5 rounded-2xl border transition-all duration-300 ${
+                  className={`text-left p-3.5 rounded-2xl border transition-all duration-300 ${
                     activeTab === 'whatsapp'
                       ? 'bg-emerald-500/15 border-emerald-400/50 shadow-glow-whatsapp'
-                      : 'bg-white/[0.03] border-white/10 hover:bg-white/[0.06] hover:border-white/20'
+                      : 'bg-white/[0.03] border-white/10 hover:border-white/20'
                   }`}
                 >
-                  <div className="flex items-center justify-between mb-1.5">
-                    <span className="text-[11px] font-display font-semibold text-emerald-400 font-semibold">01 / CORE</span>
-                    <MessageSquare className="w-4 h-4 text-emerald-400" />
-                  </div>
-                  <div className="font-display font-bold text-sm text-white group-hover:text-emerald-300 transition-colors">
-                    WhatsApp Automation
-                  </div>
-                  <p className="text-xs text-slate-400 mt-0.5 line-clamp-1">
-                    Instant admission &amp; parent enquiry flows
-                  </p>
+                  <MessageSquare className="w-4 h-4 text-emerald-400 mb-1.5" />
+                  <div className="font-display font-bold text-sm text-white">WhatsApp Chat</div>
+                  <p className="text-xs text-slate-400 mt-0.5">Instant 24/7 replies</p>
                 </button>
 
-                {/* Pill 02: Instagram DM Workflows */}
                 <button
                   type="button"
                   onClick={() => handleSelectTab('instagram')}
-                  className={`group text-left p-3.5 rounded-2xl border transition-all duration-300 ${
+                  className={`text-left p-3.5 rounded-2xl border transition-all duration-300 ${
                     activeTab === 'instagram'
                       ? 'bg-pink-500/15 border-pink-400/50 shadow-glow-instagram'
-                      : 'bg-white/[0.03] border-white/10 hover:bg-white/[0.06] hover:border-white/20'
+                      : 'bg-white/[0.03] border-white/10 hover:border-white/20'
                   }`}
                 >
-                  <div className="flex items-center justify-between mb-1.5">
-                    <span className="text-[11px] font-display font-semibold text-pink-400 font-semibold">02 / CORE</span>
-                    <Sparkles className="w-4 h-4 text-pink-400" />
-                  </div>
-                  <div className="font-display font-bold text-sm text-white group-hover:text-pink-300 transition-colors">
-                    Instagram DM Workflows
-                  </div>
-                  <p className="text-xs text-slate-400 mt-0.5 line-clamp-1">
-                    Comment-to-DM &amp; keyword lead capture
-                  </p>
+                  <Sparkles className="w-4 h-4 text-pink-400 mb-1.5" />
+                  <div className="font-display font-bold text-sm text-white">Instagram DM</div>
+                  <p className="text-xs text-slate-400 mt-0.5">Auto-reply to comments</p>
                 </button>
 
-                {/* Pill 03: White-Label Services */}
                 <button
                   type="button"
                   onClick={() => handleSelectTab('whitelabel')}
-                  className={`group text-left p-3.5 rounded-2xl border transition-all duration-300 ${
+                  className={`text-left p-3.5 rounded-2xl border transition-all duration-300 ${
                     activeTab === 'whitelabel'
                       ? 'bg-brand-blue/20 border-blue-400/60 shadow-glow'
-                      : 'bg-white/[0.03] border-white/10 hover:bg-white/[0.06] hover:border-white/20'
+                      : 'bg-white/[0.03] border-white/10 hover:border-white/20'
                   }`}
                 >
-                  <div className="flex items-center justify-between mb-1.5">
-                    <span className="text-[11px] font-display font-semibold text-blue-400 font-semibold">03 / CORE</span>
-                    <Layers className="w-4 h-4 text-blue-400" />
-                  </div>
-                  <div className="font-display font-bold text-sm text-white group-hover:text-blue-300 transition-colors">
-                    White-Label Services
-                  </div>
-                  <p className="text-xs text-slate-400 mt-0.5 line-clamp-1">
-                    Your Brand, Our Execution Engine
-                  </p>
+                  <Layers className="w-4 h-4 text-blue-400 mb-1.5" />
+                  <div className="font-display font-bold text-sm text-white">White-Label</div>
+                  <p className="text-xs text-slate-400 mt-0.5">Your brand, our team</p>
                 </button>
               </div>
             </motion.div>
           </motion.div>
 
-          {/* Right Column: Interactive Live Multi-Engine Command Hub */}
+          {/* Right Column: Clean, Friendly Chat Preview */}
           <motion.div
-            initial={{ opacity: 0, y: 24, scale: 0.96 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 0.75, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.15 }}
             className="lg:col-span-5"
           >
-            <div className="relative rounded-3xl bg-slate-900/80 border border-white/15 backdrop-blur-2xl shadow-2xl overflow-hidden">
-              {/* Top Window Header Bar */}
-              <div className="flex items-center justify-between px-4 py-3 border-b border-white/10 bg-slate-950/60">
-                <div className="flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80" />
-                  <span className="w-2.5 h-2.5 rounded-full bg-amber-400/80" />
-                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-400/80" />
-                  <span className="ml-2 text-xs font-display font-semibold text-slate-300">
-                    reachryt://automation-hub
-                  </span>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-                  <span className="text-[11px] font-display font-semibold text-emerald-400">LIVE SIMULATOR</span>
-                </div>
-              </div>
-
-              {/* Engine Switcher Tabs inside Hub */}
-              <div className="grid grid-cols-3 border-b border-white/10 bg-slate-950/40 text-xs font-medium">
+            <div className="native-chat-sim relative rounded-3xl bg-[#0B141A] border border-white/15 shadow-2xl overflow-hidden">
+              {/* Top Tabs */}
+              <div className="grid grid-cols-3 border-b border-white/10 bg-[#111B21] text-xs font-medium">
                 <button
                   type="button"
                   onClick={() => handleSelectTab('whatsapp')}
-                  className={`py-2.5 px-3 flex items-center justify-center gap-1.5 border-b-2 transition-colors ${
+                  className={`py-3 px-3 flex items-center justify-center gap-1.5 border-b-2 transition-colors ${
                     activeTab === 'whatsapp'
-                      ? 'border-emerald-400 text-emerald-300 bg-emerald-500/10'
+                      ? 'border-[#25D366] text-[#25D366] bg-[#25D366]/10'
                       : 'border-transparent text-slate-400 hover:text-white'
                   }`}
                 >
@@ -221,19 +180,19 @@ export const HeroSection: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => handleSelectTab('instagram')}
-                  className={`py-2.5 px-3 flex items-center justify-center gap-1.5 border-b-2 transition-colors ${
+                  className={`py-3 px-3 flex items-center justify-center gap-1.5 border-b-2 transition-colors ${
                     activeTab === 'instagram'
-                      ? 'border-pink-400 text-pink-300 bg-pink-500/10'
+                      ? 'border-[#E1306C] text-[#E1306C] bg-[#E1306C]/10'
                       : 'border-transparent text-slate-400 hover:text-white'
                   }`}
                 >
                   <Sparkles className="w-3.5 h-3.5" />
-                  <span>Instagram DM</span>
+                  <span>Instagram</span>
                 </button>
                 <button
                   type="button"
                   onClick={() => handleSelectTab('whitelabel')}
-                  className={`py-2.5 px-3 flex items-center justify-center gap-1.5 border-b-2 transition-colors ${
+                  className={`py-3 px-3 flex items-center justify-center gap-1.5 border-b-2 transition-colors ${
                     activeTab === 'whitelabel'
                       ? 'border-blue-400 text-blue-300 bg-blue-500/10'
                       : 'border-transparent text-slate-400 hover:text-white'
@@ -244,221 +203,212 @@ export const HeroSection: React.FC = () => {
                 </button>
               </div>
 
-              {/* Dynamic Preview Canvas */}
-              <div className="p-5 min-h-[360px] flex flex-col justify-between">
-                <AnimatePresence mode="wait">
-                  {activeTab === 'whatsapp' && (
-                    <motion.div
-                      key="hero-whatsapp"
-                      initial={{ opacity: 0, y: 12 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -12 }}
-                      transition={{ duration: 0.3 }}
-                      className="space-y-3.5"
-                    >
-                      <div className="flex items-center justify-between bg-emerald-950/60 border border-emerald-500/30 rounded-xl px-3.5 py-2.5">
-                        <div className="flex items-center gap-2.5">
-                          <div className="w-8 h-8 rounded-full bg-emerald-500/20 border border-emerald-400/40 flex items-center justify-center text-emerald-300">
-                            <GraduationCap className="w-4 h-4" />
-                          </div>
-                          <div>
-                            <div className="text-xs font-semibold text-white">
-                              Admissions Desk • Automated Flow
-                            </div>
-                            <div className="text-[11px] text-emerald-400">
-                              Instant Enquiry &amp; Qualification Bot
-                            </div>
-                          </div>
+              <AnimatePresence mode="wait">
+                {activeTab === 'whatsapp' && (
+                  <motion.div
+                    key="hero-whatsapp"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                    className="flex flex-col"
+                  >
+                    {/* Original WhatsApp Header */}
+                    <div className="bg-[#202C33] px-4 py-3 flex items-center justify-between border-b border-white/5">
+                      <div className="flex items-center gap-3">
+                        <div className="w-9 h-9 rounded-full bg-[#00A884] flex items-center justify-center text-white">
+                          <GraduationCap className="w-5 h-5" />
                         </div>
-                        <span className="text-[10px] font-display font-semibold px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300">
-                          ACTIVE
-                        </span>
+                        <div>
+                          <div className="text-xs font-semibold text-white">Admissions Helpdesk</div>
+                          <div className="text-[11px] text-[#8696A0]">online</div>
+                        </div>
                       </div>
+                      <div className="flex items-center gap-4 text-[#8696A0]">
+                        <Video className="w-4 h-4" />
+                        <Phone className="w-4 h-4" />
+                      </div>
+                    </div>
 
-                      {/* Incoming Student Message */}
+                    {/* Original WhatsApp Doodle Wallpaper Body */}
+                    <div className="wa-chat-wallpaper p-4 space-y-3 min-h-[260px] flex flex-col justify-center">
                       <div className="flex justify-start">
-                        <div className="max-w-[85%] rounded-2xl rounded-tl-sm bg-slate-800 border border-white/10 px-3.5 py-2.5 text-xs text-slate-100">
-                          <p>
-                            Hi! Are admissions open for the upcoming academic intake? Can I get the
-                            fee structure &amp; syllabus brochure?
-                          </p>
-                          <span className="block text-[10px] text-slate-400 mt-1 text-right">
+                        <div className="max-w-[80%] rounded-lg rounded-tl-none bg-[#202C33] px-3 py-2 text-xs text-[#E9EDEF] shadow">
+                          <p>Hi! Are admissions open? Can I get the brochure?</p>
+                          <span className="block text-[10px] text-[#8696A0] mt-1 text-right">
                             10:14 AM
                           </span>
                         </div>
                       </div>
 
-                      {/* Automated Trigger Tag */}
-                      <div className="flex items-center gap-2 text-[11px] font-display font-semibold text-emerald-400 pl-2">
-                        <Zap className="w-3.5 h-3.5" />
-                        <span>Intent detected: Admission Enquiry → Sending brochure + qualification prompt</span>
-                      </div>
-
-                      {/* Outgoing Automated WhatsApp Reply */}
                       <div className="flex justify-end">
-                        <div className="max-w-[88%] rounded-2xl rounded-tr-sm bg-emerald-600/25 border border-emerald-400/35 px-3.5 py-2.5 text-xs text-emerald-50">
-                          <p className="font-medium text-white mb-1">
-                            Welcome! Admissions are currently open. Here is the digital programme
-                            brochure. Which stream are you enquiring for?
+                        <div className="max-w-[85%] rounded-lg rounded-tr-none bg-[#005C4B] px-3 py-2 text-xs text-[#E9EDEF] shadow">
+                          <p className="mb-1.5">
+                            Hello! 😊 Yes, admissions are open. Here is our brochure. What would you
+                            like to check?
                           </p>
-                          <div className="mt-2 flex flex-wrap gap-1.5">
-                            <span className="px-2.5 py-1 rounded-lg bg-emerald-500/20 border border-emerald-400/30 text-[11px] text-emerald-200">
-                              1. Undergraduate
-                            </span>
-                            <span className="px-2.5 py-1 rounded-lg bg-emerald-500/20 border border-emerald-400/30 text-[11px] text-emerald-200">
-                              2. Postgraduate
-                            </span>
-                            <span className="px-2.5 py-1 rounded-lg bg-emerald-500/20 border border-emerald-400/30 text-[11px] text-emerald-200">
-                              3. Book Campus Visit
-                            </span>
+                          <div className="space-y-1 mt-2">
+                            {['Course Details', 'Fee Structure', 'Book a Campus Visit'].map(
+                              (opt) => (
+                                <div
+                                  key={opt}
+                                  className="px-2.5 py-1.5 rounded bg-[#0b141a]/35 text-center text-[11px] font-medium text-[#53BDEB]"
+                                >
+                                  {opt}
+                                </div>
+                              )
+                            )}
                           </div>
-                          <div className="flex items-center justify-end gap-1 text-[10px] text-emerald-300 mt-1.5">
+                          <div className="flex items-center justify-end gap-1 text-[10px] text-[#8696A0] mt-1.5">
                             <span>10:14 AM</span>
-                            <CheckCheck className="w-3.5 h-3.5 text-cyan-300" />
+                            <CheckCheck className="w-3.5 h-3.5 text-[#53BDEB]" />
                           </div>
                         </div>
                       </div>
-                    </motion.div>
-                  )}
+                    </div>
 
-                  {activeTab === 'instagram' && (
-                    <motion.div
-                      key="hero-instagram"
-                      initial={{ opacity: 0, y: 12 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -12 }}
-                      transition={{ duration: 0.3 }}
-                      className="space-y-3.5"
-                    >
-                      {/* Post Comment Trigger Card */}
-                      <div className="rounded-xl bg-gradient-to-r from-purple-950/70 via-pink-950/60 to-orange-950/50 border border-pink-500/30 p-3">
-                        <div className="flex items-center justify-between text-[11px] text-pink-300 font-display font-semibold mb-1">
-                          <span>INSTAGRAM POST COMMENT TRIGGER</span>
-                          <span className="px-2 py-0.5 rounded bg-pink-500/20 text-pink-200">
-                            KEYWORD: &quot;ADMISSION&quot;
+                    {/* Original WhatsApp Input Bar */}
+                    <div className="bg-[#202C33] px-3 py-2 flex items-center gap-2">
+                      <div className="flex-1 rounded-full bg-[#2A3942] px-3.5 py-1.5 flex items-center justify-between text-xs text-[#8696A0]">
+                        <span className="flex items-center gap-2">
+                          <Smile className="w-4 h-4" />
+                          <span>Message</span>
+                        </span>
+                        <Camera className="w-4 h-4" />
+                      </div>
+                      <div className="w-8 h-8 rounded-full bg-[#00A884] flex items-center justify-center text-white">
+                        <Mic className="w-4 h-4" />
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+
+                {activeTab === 'instagram' && (
+                  <motion.div
+                    key="hero-instagram"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                    className="flex flex-col"
+                  >
+                    {/* Original Instagram DM Header */}
+                    <div className="bg-[#000000] px-4 py-3 flex items-center justify-between border-b border-[#262626]">
+                      <div className="flex items-center gap-2.5">
+                        <div className="p-[2px] rounded-full bg-gradient-to-tr from-[#F58529] via-[#DD2A7B] to-[#8134AF]">
+                          <div className="w-8 h-8 rounded-full bg-black flex items-center justify-center text-[11px] font-bold text-white">
+                            ED
+                          </div>
+                        </div>
+                        <div>
+                          <div className="text-xs font-semibold text-white">campus_official</div>
+                          <div className="text-[10px] text-[#A8A8A8]">Active now</div>
+                        </div>
+                      </div>
+                      <div className="flex items-center gap-4 text-white">
+                        <Phone className="w-4 h-4" />
+                        <Video className="w-4 h-4" />
+                      </div>
+                    </div>
+
+                    {/* Original Instagram DM Background */}
+                    <div className="ig-dm-wallpaper p-4 space-y-3 min-h-[260px] flex flex-col justify-center">
+                      <div className="flex justify-end">
+                        <div className="rounded-2xl rounded-br-sm bg-gradient-to-r from-[#833AB4] via-[#E1306C] to-[#F77737] px-3.5 py-2 text-xs text-white">
+                          Interested in admissions!
+                        </div>
+                      </div>
+
+                      <div className="flex items-end gap-2 justify-start">
+                        <div className="w-6 h-6 rounded-full bg-[#262626] flex items-center justify-center text-[10px] font-bold text-white shrink-0">
+                          ED
+                        </div>
+                        <div className="max-w-[82%] rounded-2xl rounded-bl-sm bg-[#262626] p-3 text-xs text-white space-y-2">
+                          <p>Hey there! 👋 Tap below to get our brochure or apply online:</p>
+                          <div className="space-y-1.5 pt-1">
+                            <div className="py-1.5 px-3 rounded-xl bg-[#363636] text-center text-[11px] font-semibold text-white">
+                              📥 Download Brochure
+                            </div>
+                            <div className="py-1.5 px-3 rounded-xl bg-[#363636] text-center text-[11px] font-semibold text-[#0095F6]">
+                              🎓 Talk to Admissions
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Original Instagram DM Input Bar */}
+                    <div className="bg-[#000000] px-3 py-2.5 border-t border-[#262626]">
+                      <div className="rounded-full bg-[#262626] px-3 py-1.5 flex items-center justify-between text-xs text-[#A8A8A8]">
+                        <div className="flex items-center gap-2">
+                          <span className="w-6 h-6 rounded-full bg-[#0095F6] flex items-center justify-center text-white">
+                            <Camera className="w-3.5 h-3.5" />
                           </span>
+                          <span>Message...</span>
                         </div>
-                        <p className="text-xs text-white">
-                          <span className="font-semibold text-pink-300">@prospective_student:</span>{' '}
-                          &quot;Interested! Commenting <strong>ADMISSION</strong> for details!&quot;
-                        </p>
-                      </div>
-
-                      {/* Workflow Bridge Arrow */}
-                      <div className="flex items-center gap-2 text-[11px] font-display font-semibold text-pink-400 pl-2">
-                        <Send className="w-3.5 h-3.5" />
-                        <span>Comment-to-DM Workflow Triggered Instantly</span>
-                      </div>
-
-                      {/* Automated Instagram DM Bubble */}
-                      <div className="rounded-2xl bg-slate-800/90 border border-pink-400/30 p-3.5 space-y-2.5">
-                        <div className="text-xs text-slate-100 leading-relaxed">
-                          Hey there! 👋 Thanks for commenting on our post. Tap below to receive the
-                          application guide or schedule a counselling call right inside Instagram DM:
-                        </div>
-                        <div className="grid grid-cols-2 gap-2">
-                          <div className="text-center py-2 px-2.5 rounded-xl bg-gradient-to-r from-pink-500/25 to-purple-500/25 border border-pink-400/40 text-[11px] font-semibold text-white">
-                            📥 Download Prospectus
-                          </div>
-                          <div className="text-center py-2 px-2.5 rounded-xl bg-white/5 border border-white/15 text-[11px] font-semibold text-slate-200">
-                            🎓 Talk to Admissions
-                          </div>
+                        <div className="flex items-center gap-2.5 text-white">
+                          <Mic className="w-4 h-4" />
+                          <ImageIcon className="w-4 h-4" />
                         </div>
                       </div>
-                    </motion.div>
-                  )}
+                    </div>
+                  </motion.div>
+                )}
 
-                  {activeTab === 'whitelabel' && (
-                    <motion.div
-                      key="hero-whitelabel"
-                      initial={{ opacity: 0, y: 12 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -12 }}
-                      transition={{ duration: 0.3 }}
-                      className="space-y-4"
-                    >
+                {activeTab === 'whitelabel' && (
+                  <motion.div
+                    key="hero-whitelabel"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.2 }}
+                    className="p-5 min-h-[348px] bg-[#0B1326] flex flex-col justify-between"
+                  >
+                    <div className="space-y-4">
                       <div className="rounded-xl bg-blue-950/60 border border-blue-400/30 p-3.5">
-                        <div className="flex items-center justify-between mb-1">
-                          <span className="text-[11px] font-display font-semibold text-blue-300 uppercase">
-                            WHITE-LABEL ARCHITECTURE
-                          </span>
-                          <span className="text-[10px] font-display font-semibold px-2 py-0.5 rounded bg-brand-blue/30 text-blue-200">
-                            YOUR BRAND, OUR ENGINE
-                          </span>
+                        <div className="text-xs font-bold text-white mb-1">
+                          Your Brand. Our Team.
                         </div>
-                        <p className="text-xs text-slate-200">
-                          You own the client relationship and brand identity. Reachryt powers the
-                          automation workflows, campaign engineering, and execution behind the scenes.
+                        <p className="text-xs text-slate-300">
+                          You handle the client relationship. We do all the setup and marketing work
+                          under your brand name.
                         </p>
                       </div>
 
-                      {/* 3-Node Visual Pipeline */}
                       <div className="grid grid-cols-3 gap-2 items-center text-center">
                         <div className="p-3 rounded-xl bg-slate-800/80 border border-white/15">
                           <ShieldCheck className="w-5 h-5 text-cyan-400 mx-auto mb-1" />
-                          <div className="text-xs font-bold text-white">Partner Agency</div>
-                          <div className="text-[10px] text-slate-400 mt-0.5">100% Your Branding</div>
+                          <div className="text-xs font-bold text-white">Your Brand</div>
                         </div>
 
-                        <div className="p-3 rounded-xl bg-brand-blue/25 border border-blue-400/50 shadow-glow">
-                          <GitBranch className="w-5 h-5 text-blue-300 mx-auto mb-1" />
-                          <div className="text-xs font-bold text-white">Reachryt Engine</div>
-                          <div className="text-[10px] text-blue-200 mt-0.5">Invisible Execution</div>
+                        <div className="p-3 rounded-xl bg-brand-blue/25 border border-blue-400/50">
+                          <Users className="w-5 h-5 text-blue-300 mx-auto mb-1" />
+                          <div className="text-xs font-bold text-white">Our Team</div>
                         </div>
 
                         <div className="p-3 rounded-xl bg-slate-800/80 border border-white/15">
                           <GraduationCap className="w-5 h-5 text-emerald-400 mx-auto mb-1" />
-                          <div className="text-xs font-bold text-white">End Client</div>
-                          <div className="text-[10px] text-slate-400 mt-0.5">Seamless Delivery</div>
+                          <div className="text-xs font-bold text-white">Happy Client</div>
                         </div>
                       </div>
+                    </div>
 
-                      <div className="rounded-xl bg-white/[0.03] border border-white/10 px-3.5 py-2.5 flex items-center justify-between text-xs">
-                        <span className="text-slate-300">Custom Workflows • Dedicated Delivery</span>
-                        <span className="font-display font-semibold text-blue-400 font-semibold">NDA Protected</span>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-
-                {/* Bottom Action Footer inside Simulator */}
-                <div className="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs">
-                  <span className="text-slate-400">
-                    Scroll down to test full interactive simulators
-                  </span>
-                  <a
-                    href={
-                      activeTab === 'whatsapp'
-                        ? '#service-whatsapp'
-                        : activeTab === 'instagram'
-                        ? '#service-instagram'
-                        : '#service-whitelabel'
-                    }
-                    className="inline-flex items-center gap-1 font-semibold text-blue-400 hover:text-blue-300 transition-colors"
-                  >
-                    <span>Open Full Demo</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </a>
-                </div>
-              </div>
+                    <div className="pt-3 border-t border-white/10 flex items-center justify-between text-xs">
+                      <span className="text-slate-400">100% private &amp; confidential</span>
+                      <a
+                        href="#service-whitelabel"
+                        className="inline-flex items-center gap-1 font-semibold text-blue-400 hover:text-blue-300"
+                      >
+                        <span>Learn More</span>
+                        <ArrowRight className="w-3.5 h-3.5" />
+                      </a>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
           </motion.div>
         </div>
-      </div>
-
-      {/* Bottom First-Scroll Anchor Strip */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full mt-12 pt-6 border-t border-white/10 flex flex-wrap items-center justify-between gap-4 text-xs text-slate-400">
-        <div className="flex items-center gap-2">
-          <span className="inline-block w-2 h-2 rounded-full bg-brand-blue" />
-          <span>Built exclusively for Schools, Colleges, Universities, Coaching Institutions &amp; Agency Partners</span>
-        </div>
-        <a
-          href="#services"
-          className="inline-flex items-center gap-2 text-white hover:text-blue-400 font-display font-semibold uppercase tracking-wider transition-colors"
-        >
-          <span>First Scroll: Interactive Service Showcases</span>
-          <ArrowRight className="w-3.5 h-3.5 rotate-90" />
-        </a>
       </div>
     </section>
   );

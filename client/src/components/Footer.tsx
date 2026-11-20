@@ -19,8 +19,8 @@ export const Footer: React.FC = () => {
               />
             </a>
             <p className="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-sm">
-              Technology-driven digital marketing and conversational automation partner for schools,
-              colleges, universities, coaching institutions, and white-label agency partners.
+              WhatsApp automation, Instagram DM flows, and white-label digital marketing for
+              education and agencies.
             </p>
           </div>
 
@@ -64,27 +64,27 @@ export const Footer: React.FC = () => {
           {/* Column 3: Core Services */}
           <div className="lg:col-span-3 space-y-3">
             <div className="text-xs font-display font-semibold uppercase tracking-wider text-white">
-              Core Solutions
+              Services
             </div>
             <ul className="space-y-2 text-xs sm:text-sm">
               <li>
                 <a href="#service-whatsapp" className="hover:text-emerald-300 transition-colors">
-                  01. WhatsApp Automation
+                  WhatsApp Automation
                 </a>
               </li>
               <li>
                 <a href="#service-instagram" className="hover:text-pink-300 transition-colors">
-                  02. Instagram DM Workflows
+                  Instagram DM
                 </a>
               </li>
               <li>
                 <a href="#service-whitelabel" className="hover:text-blue-300 transition-colors">
-                  03. White-Label Services (Your Brand, Our Engine)
+                  White-Label Services
                 </a>
               </li>
               <li>
                 <a href="#why-reachryt" className="hover:text-white transition-colors">
-                  Education SEO &amp; Admission Campaigns
+                  Digital Marketing &amp; SEO
                 </a>
               </li>
             </ul>

@@ -58,14 +58,18 @@ export class GoogleSheetsService {
             'Primary Service Interest': serviceInterestLabel,
             'Tell Us': input.message,
         };
+        // Prefix values starting with +, =, -, or @ with a single quote (') so Google Sheets
+        // treats phone numbers like "+91 90929 34889" as plain text instead of a formula (#ERROR!),
+        // and prevents CSV/formula injection.
+        const safeSpreadsheetValue = (val) => /^[+=@-]/.test(val.trim()) ? `'${val.trim()}` : val.trim();
         const valuesArray = [
-            preparedRow['Full Name'],
-            preparedRow['Institution or Agency Name '],
-            preparedRow['Work Email Address'],
-            preparedRow['Phone / WhatsApp Number'],
-            preparedRow['Organisation Type'],
-            preparedRow['Primary Service Interest'],
-            preparedRow['Tell Us'],
+            safeSpreadsheetValue(preparedRow['Full Name']),
+            safeSpreadsheetValue(preparedRow['Institution or Agency Name ']),
+            safeSpreadsheetValue(preparedRow['Work Email Address']),
+            safeSpreadsheetValue(preparedRow['Phone / WhatsApp Number']),
+            safeSpreadsheetValue(preparedRow['Organisation Type']),
+            safeSpreadsheetValue(preparedRow['Primary Service Interest']),
+            safeSpreadsheetValue(preparedRow['Tell Us']),
         ];
         return { preparedRow, valuesArray };
     }
