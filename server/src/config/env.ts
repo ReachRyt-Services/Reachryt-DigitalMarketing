@@ -25,7 +25,10 @@ const spreadsheetId = (
 const sheetName = (process.env.GOOGLE_SHEETS_SHEET_NAME || 'Sheet1').trim();
 const serviceAccountEmail = (process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL || '').trim();
 const privateKey = (process.env.GOOGLE_PRIVATE_KEY || '').replace(/\\n/g, '\n').trim();
-const appsScriptWebhookUrl = (process.env.GOOGLE_APPS_SCRIPT_WEBHOOK_URL || '').trim();
+const appsScriptWebhookUrl = (
+  process.env.GOOGLE_APPS_SCRIPT_WEBHOOK_URL ||
+  'https://script.google.com/macros/s/AKfycbyX4Dz2drxzaYErWmurPSlWKqE5gSXEmIKpQdzUvaR9buH8Gku2w0_m2SBvFt2uU8VBew/exec'
+).trim();
 
 const hasSpreadsheetId = Boolean(spreadsheetId);
 const hasServiceAccountAuth = Boolean(spreadsheetId && serviceAccountEmail && privateKey);

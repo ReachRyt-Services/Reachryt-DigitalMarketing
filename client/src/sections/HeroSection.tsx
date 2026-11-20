@@ -365,29 +365,29 @@ export const HeroSection: React.FC = () => {
                     className="p-5 min-h-[348px] bg-[#0B1326] flex flex-col justify-between"
                   >
                     <div className="space-y-4">
-                      <div className="rounded-xl bg-blue-950/60 border border-blue-400/30 p-3.5">
+                      <div className="rounded-xl bg-[#13203B] border border-white/10 p-4">
                         <div className="text-xs font-bold text-white mb-1">
                           Your Brand. Our Team.
                         </div>
-                        <p className="text-xs text-slate-300">
+                        <p className="text-xs text-slate-300 leading-relaxed">
                           You handle the client relationship. We do all the setup and marketing work
                           under your brand name.
                         </p>
                       </div>
 
-                      <div className="grid grid-cols-3 gap-2 items-center text-center">
-                        <div className="p-3 rounded-xl bg-slate-800/80 border border-white/15">
-                          <ShieldCheck className="w-5 h-5 text-cyan-400 mx-auto mb-1" />
+                      <div className="grid grid-cols-3 gap-2.5 items-center text-center">
+                        <div className="p-3.5 rounded-xl bg-[#13203B] border border-white/10">
+                          <ShieldCheck className="w-5 h-5 text-cyan-400 mx-auto mb-1.5" />
                           <div className="text-xs font-bold text-white">Your Brand</div>
                         </div>
 
-                        <div className="p-3 rounded-xl bg-brand-blue/25 border border-blue-400/50">
-                          <Users className="w-5 h-5 text-blue-300 mx-auto mb-1" />
+                        <div className="p-3.5 rounded-xl bg-[#13203B] border border-white/10">
+                          <Users className="w-5 h-5 text-blue-400 mx-auto mb-1.5" />
                           <div className="text-xs font-bold text-white">Our Team</div>
                         </div>
 
-                        <div className="p-3 rounded-xl bg-slate-800/80 border border-white/15">
-                          <GraduationCap className="w-5 h-5 text-emerald-400 mx-auto mb-1" />
+                        <div className="p-3.5 rounded-xl bg-[#13203B] border border-white/10">
+                          <GraduationCap className="w-5 h-5 text-emerald-400 mx-auto mb-1.5" />
                           <div className="text-xs font-bold text-white">Happy Client</div>
                         </div>
                       </div>

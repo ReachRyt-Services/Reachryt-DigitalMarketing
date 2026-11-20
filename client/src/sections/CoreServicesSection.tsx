@@ -434,10 +434,10 @@ export const CoreServicesSection: React.FC = () => {
                 </p>
               </div>
 
-              <div className="rounded-2xl bg-brand-blue/20 border border-blue-400/50 p-5 space-y-2">
-                <Users className="w-5 h-5 text-blue-300" />
+              <div className="rounded-2xl bg-slate-900/90 border border-white/10 p-5 space-y-2">
+                <Users className="w-5 h-5 text-blue-400" />
                 <h4 className="font-display font-bold text-base text-white">2. Our Team</h4>
-                <p className="text-xs sm:text-sm text-blue-100">
+                <p className="text-xs sm:text-sm text-slate-300">
                   We handle the setup, campaigns, and daily work quietly in the background.
                 </p>
               </div>
